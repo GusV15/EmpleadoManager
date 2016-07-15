@@ -32,7 +32,8 @@ public class DBInMemory {
     }
 
     public Empleado buscarEmpleado(Long id) {
-        return null;
+      
+        return datos.get(id);
     }
-    
+    // Tarea: Implementar remover, modificar y buscar por nombre.
 }

@@ -1,17 +1,38 @@
-
 package com.mycompany.empleadomanager.modelo;
 
+import java.util.Objects;
 
 public class Empleado {
-    
+
     private Long id;
     private String nombre;
     private Integer edad;
     private double sueldo;
     private String dni;
-    
-    public Empleado(){
-        
+
+    public Empleado() {
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.dni);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+        if (!Objects.equals(this.dni, other.dni)) {
+            return false;
+        }
+        return true;
     }
 
     public Long getId() {
@@ -53,8 +74,4 @@ public class Empleado {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
-    
-    
-    
 }
