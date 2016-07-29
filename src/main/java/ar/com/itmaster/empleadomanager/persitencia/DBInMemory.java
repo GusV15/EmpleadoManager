@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.empleadomanager.modelo;
+package ar.com.itmaster.empleadomanager.persitencia;
 
+import com.mycompany.empleadomanager.modelo.Empleado;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +12,10 @@ import java.util.Map;
  *
  * @author itmasterprofessionaltraining
  */
-public class DBInMemory {
+public class DBInMemory implements DAO{
     
     private Long lastID = 0L;
-    private Map<Long, Empleado> datos = new HashMap<>();
+    private static Map<Long, Empleado> datos = new HashMap<>();
     
     public void almacenar(Empleado emp) {
         //Validaciones 
