@@ -30,6 +30,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         btnGuardar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        txtId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,21 +42,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(143, 143, 143)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(btnGuardar)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .add(116, 116, 116))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .add(50, 50, 50)
+                .add(txtId, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 118, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 67, Short.MAX_VALUE)
+                .add(jButton1)
+                .add(60, 60, 60))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(129, 129, 129)
+                .add(123, 123, 123)
                 .add(btnGuardar)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .add(31, 31, 31)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(txtId, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton1))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
@@ -67,6 +86,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         empleado.setDni("9999999");
         ControladorVentanaPrincipal.grabarEmpleado(empleado);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // lee el texto
+        long id = Long.valueOf(txtId.getText());
+        Empleado empleado = ControladorVentanaPrincipal.buscarEmpleado(id);
+        System.out.println(empleado);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,5 +130,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }

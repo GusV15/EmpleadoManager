@@ -16,6 +16,11 @@ public class ControladorVentanaPrincipal {
         dao.almacenar(empleado);
     }
 
+    public static Empleado buscarEmpleado(long id) {
+        DAO dao = new DAODB();
+        return dao.buscarEmpleado(id);    
+    }
+
    
     
 }

@@ -52,6 +52,11 @@ public class Empleado {
         this.nombre = nombre;
     }
 
+    @Override
+    public String toString() {
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", sueldo=" + sueldo + ", dni=" + dni + '}';
+    }
+
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
